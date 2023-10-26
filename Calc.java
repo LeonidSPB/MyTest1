@@ -28,7 +28,6 @@ public class Calc {
     }
 
     public String result(String exp) throws CalcException{
-        boolean isRomanExp;
         Exa exa = new Exa();
 
 
@@ -44,11 +43,10 @@ public class Calc {
             throw new CalcException("ОШИБКА! Оператор '" + expItems.get(1) + "' не корректен, должен быть один из операторов: + - * / ");
         }
 
-        if (exa.isNumeric(expItems.get(0)) && exa.isNumeric(expItems.get(2))){      //проверяем, что оба введенные числа арабские
+        if (exa.isNumeric(expItems.get(0)) && exa.isNumeric(expItems.get(2))){
             c1 = Integer.parseInt(expItems.get(0));
             c2 = Integer.parseInt(expItems.get(2));
-            isRomanExp = false;
-        } else {    //числа не соответствуют нужному формату
+        } else {
             throw new CalcException("ОШИБКА ВВОДА");
         }
 
@@ -60,10 +58,6 @@ public class Calc {
         }
 
         int itog = calcExp(c1, znak, c2);
-
-        if (isRomanExp){
-            String sign = itog < 0 ? "-" : "";
-        }
         return String.valueOf(itog);
     }
 }
