@@ -1,5 +1,4 @@
-import Calculat.Calc;
-import Calculat.CalcException;
+package Calculat;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -18,6 +17,7 @@ public class CalculatorM {
             System.out.println("Ответ: " + result);
         }
         catch(CalcException | IOException e){
+            System.out.println();
         }
     }
 }
